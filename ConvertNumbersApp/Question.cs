@@ -10,7 +10,7 @@ namespace ConvertNumbersApp
         private const string RED_CROSS = "✘";
         
         public Label Label;
-        public TextBox Text;
+        public TextBox QuestionText;
         public TextBox UserAnswer;
         public Label Checkmark;
 
@@ -19,29 +19,42 @@ namespace ConvertNumbersApp
         public Question(Label label, TextBox text, TextBox userAnswer, Label checkmark)
         {
             Label = label;
-            Text = text;
+            QuestionText = text;
             UserAnswer = userAnswer;
             Checkmark = checkmark;
 
             QuestionType type = (QuestionType)new Random().Next(0, 6);
 
+            int denary = new Random().Next(266);
+
             switch (type)
             {
                 case QuestionType.DenaryToBinary:
-                    int denary = new Random().Next(266);
-                    string binaryAnswer = Converters.DenaryToBinary(denary);
-
-                    Answer = binaryAnswer;
+                    Label.Text = "Denary -> Binary";
+                    QuestionText.Text = denary.ToString();
+                    Answer = Converters.DenaryToBinary(denary);
                     break;
                 case QuestionType.BinaryToDenary:
+                    Label.Text = "Binary -> Denary";
+                    QuestionText.Text = Converters.DenaryToBinary(denary);
+                    Answer = denary.ToString();
                     break;
                 case QuestionType.BinaryToHex:
+                    Label.Text = "Binary -> Hex";
+
                     break;
                 case QuestionType.HexToBinary:
+                    Label.Text = "Hex -> Binary";
+
                     break;
                 case QuestionType.DenaryToHex:
+                    Label.Text = "Denary -> Hex";
+                    QuestionText.Text = denary.ToString();
+
                     break;
                 case QuestionType.HexToDenary:
+                    Label.Text = "Hex -> Denary";
+
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();
