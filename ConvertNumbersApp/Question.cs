@@ -28,6 +28,10 @@ namespace ConvertNumbersApp
             switch (type)
             {
                 case QuestionType.DenaryToBinary:
+                    int denary = new Random().Next(266);
+                    string binaryAnswer = Converters.DenaryToBinary(denary);
+
+                    Answer = binaryAnswer;
                     break;
                 case QuestionType.BinaryToDenary:
                     break;
