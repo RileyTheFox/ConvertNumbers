@@ -76,4 +76,8 @@ namespace ConvertNumbersApp
         DenaryToHex = 4,
         HexToDenary = 5
     }
+
+    // TODO
+    // Not random
+    // 6 questions, 1 of each
 }
