@@ -16,16 +16,19 @@ namespace ConvertNumbersApp
 
         private string Answer;
         
-        public Question(Label label, TextBox text, TextBox userAnswer, Label checkmark)
+        public Question(Label label, TextBox text, TextBox userAnswer, Label checkmark, ref Random random, QuestionType type = QuestionType.Default)
         {
             Label = label;
             QuestionText = text;
             UserAnswer = userAnswer;
             Checkmark = checkmark;
 
-            QuestionType type = (QuestionType)new Random().Next(0, 6);
+            Checkmark.Visible = false;
 
-            int denary = new Random().Next(266);
+            if(type == QuestionType.Default)
+                type = (QuestionType)random.Next(0, 6);
+
+            int denary = random.Next(256);
 
             switch (type)
             {
@@ -69,6 +72,7 @@ namespace ConvertNumbersApp
 
     public enum QuestionType
     {
+        Default = -1,
         DenaryToBinary = 0,
         BinaryToDenary = 1,
         BinaryToHex = 2,

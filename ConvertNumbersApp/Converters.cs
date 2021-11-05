@@ -43,5 +43,10 @@ namespace ConvertNumbersApp
 
             return denary;
         }
+
+        public static void DenaryToHex(int denary)
+        {
+
+        }
     }
 }

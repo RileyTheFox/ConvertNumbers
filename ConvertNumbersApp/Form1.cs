@@ -25,14 +25,14 @@ namespace ConvertNumbersApp
         {
             Questions.Clear();
 
-            Questions.Add(new Question(q1Label, q1Text, q1Answer, q1Check));
-            Questions.Add(new Question(q2Label, q2Text, q2Answer, q2Check));
-            Questions.Add(new Question(q3Label, q3Text, q3Answer, q3Check));
-            Questions.Add(new Question(q4Label, q4Text, q4Answer, q4Check));
-            Questions.Add(new Question(q5Label, q5Text, q5Answer, q5Check));
-            Questions.Add(new Question(q6Label, q6Text, q6Answer, q6Check));
-            Questions.Add(new Question(q7Label, q7Text, q7Answer, q7Check));
-            Questions.Add(new Question(q8Label, q8Text, q8Answer, q8Check));
+            var random = new Random();
+
+            Questions.Add(new Question(q1Label, q1Text, q1Answer, q1Check, ref random, QuestionType.DenaryToBinary));
+            Questions.Add(new Question(q2Label, q2Text, q2Answer, q2Check, ref random, QuestionType.BinaryToDenary));
+            Questions.Add(new Question(q3Label, q3Text, q3Answer, q3Check, ref random, QuestionType.BinaryToHex));
+            Questions.Add(new Question(q4Label, q4Text, q4Answer, q4Check, ref random, QuestionType.HexToBinary));
+            Questions.Add(new Question(q5Label, q5Text, q6Answer, q5Check, ref random, QuestionType.DenaryToHex));
+            Questions.Add(new Question(q6Label, q6Text, q4Answer, q6Check, ref random, QuestionType.HexToDenary));
 
 
             /*Questions.AddRange(new Question[]
