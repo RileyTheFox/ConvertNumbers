@@ -74,8 +74,9 @@
             // 
             // submitButton
             // 
+            this.submitButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.submitButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.submitButton.Location = new System.Drawing.Point(838, 557);
+            this.submitButton.Location = new System.Drawing.Point(1033, 528);
             this.submitButton.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.submitButton.Name = "submitButton";
             this.submitButton.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
@@ -83,6 +84,7 @@
             this.submitButton.TabIndex = 3;
             this.submitButton.Text = "Submit";
             this.submitButton.UseVisualStyleBackColor = false;
+            this.submitButton.Click += new System.EventHandler(this.submitButton_Click);
             // 
             // questionsPanel
             // 
@@ -91,7 +93,7 @@
             this.questionsPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.questionsPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.questionsPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.questionsPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 142F));
+            this.questionsPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
             this.questionsPanel.Controls.Add(this.q6Check, 3, 5);
             this.questionsPanel.Controls.Add(this.q5Check, 3, 4);
             this.questionsPanel.Controls.Add(this.q4Check, 3, 3);
@@ -120,13 +122,13 @@
             this.questionsPanel.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.questionsPanel.Name = "questionsPanel";
             this.questionsPanel.RowCount = 6;
-            this.questionsPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.questionsPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.questionsPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.questionsPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.questionsPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.questionsPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.questionsPanel.Size = new System.Drawing.Size(1108, 467);
+            this.questionsPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.questionsPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.questionsPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.questionsPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.questionsPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.questionsPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.questionsPanel.Size = new System.Drawing.Size(1147, 433);
             this.questionsPanel.TabIndex = 2;
             // 
             // q6Check
@@ -189,7 +191,6 @@
             this.q1Answer.Location = new System.Drawing.Point(484, 6);
             this.q1Answer.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.q1Answer.Name = "q1Answer";
-            this.q1Answer.ReadOnly = true;
             this.q1Answer.Size = new System.Drawing.Size(468, 31);
             this.q1Answer.TabIndex = 2;
             // 
@@ -240,7 +241,6 @@
             this.q2Answer.Location = new System.Drawing.Point(484, 83);
             this.q2Answer.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.q2Answer.Name = "q2Answer";
-            this.q2Answer.ReadOnly = true;
             this.q2Answer.Size = new System.Drawing.Size(468, 31);
             this.q2Answer.TabIndex = 5;
             // 
@@ -270,7 +270,6 @@
             this.q3Answer.Location = new System.Drawing.Point(484, 160);
             this.q3Answer.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.q3Answer.Name = "q3Answer";
-            this.q3Answer.ReadOnly = true;
             this.q3Answer.Size = new System.Drawing.Size(468, 31);
             this.q3Answer.TabIndex = 8;
             // 
@@ -309,7 +308,6 @@
             this.q4Answer.Location = new System.Drawing.Point(484, 237);
             this.q4Answer.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.q4Answer.Name = "q4Answer";
-            this.q4Answer.ReadOnly = true;
             this.q4Answer.Size = new System.Drawing.Size(468, 31);
             this.q4Answer.TabIndex = 14;
             // 
@@ -351,7 +349,6 @@
             this.q5Answer.Location = new System.Drawing.Point(484, 314);
             this.q5Answer.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.q5Answer.Name = "q5Answer";
-            this.q5Answer.ReadOnly = true;
             this.q5Answer.Size = new System.Drawing.Size(468, 31);
             this.q5Answer.TabIndex = 17;
             // 
@@ -360,7 +357,6 @@
             this.q6Answer.Location = new System.Drawing.Point(484, 391);
             this.q6Answer.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.q6Answer.Name = "q6Answer";
-            this.q6Answer.ReadOnly = true;
             this.q6Answer.Size = new System.Drawing.Size(468, 31);
             this.q6Answer.TabIndex = 11;
             // 
@@ -379,7 +375,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1140, 616);
+            this.ClientSize = new System.Drawing.Size(1177, 587);
             this.Controls.Add(this.submitButton);
             this.Controls.Add(this.questionsPanel);
             this.Controls.Add(this.generateNewButton);
