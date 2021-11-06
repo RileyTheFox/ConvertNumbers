@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ConvertNumbersApp
 {
@@ -47,20 +43,6 @@ namespace ConvertNumbersApp
         public static string DenaryToHex(int denary)
         {
             return denary.ToString("X");
-
-            /*StringBuilder build = new StringBuilder("0x");
-            
-            if (denary > 255)
-                throw new ArgumentException("Denary cannot be larger than the unsigned byte max value (255)");
-            else if (denary < 0)
-                throw new ArgumentException("Denary cannot be less than the unsigned byte min value (0)");
-
-            int lsH = denary & 0x0F;
-            int hsH = denary >> 4;
-
-            build.Append($"{hsH} {lsH}");
-
-            return build.ToString();*/
         }
     }
 }
