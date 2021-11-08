@@ -13,7 +13,7 @@ namespace ConvertNumbersApp
         /// <returns>True: If the input matches the Regex.</returns>
         public static bool CheckBinaryDenary(string input, string answer)
         {
-            return Regex.IsMatch(input, $"^0*({answer})$", RegexOptions.IgnoreCase);
+            return Regex.IsMatch(input.Replace(" ", ""), $"^0*({answer})$", RegexOptions.IgnoreCase);
         }
 
         /// <summary>
