@@ -15,6 +15,8 @@ namespace ConvertNumbersApp
 
             // Automatically generate the questions on initialization
             GenerateNewQuestions();
+
+
         }
 
         private void GenerateNewQuestions()

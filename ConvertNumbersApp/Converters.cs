@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 
 namespace ConvertNumbersApp
 {
@@ -10,7 +11,7 @@ namespace ConvertNumbersApp
         /// </summary>
         /// <param name="denary">Integer (between 0 and 255)</param>
         /// <returns>Equivalent binary string.</returns>
-        public static string DenaryToBinary(int denary)
+        public static string DenaryToBinary(int denary, bool format = false)
         {
             // Check if the integer given fits what is required.
             if (denary > 255)
@@ -19,14 +20,19 @@ namespace ConvertNumbersApp
                 throw new ArgumentException("Denary cannot be less than the unsigned byte min value (0)");
 
             // Algorithm to create binary string from integer
-            string binary = "";
+            StringBuilder binary = new();
             while (denary > 0)
             {
-                binary = $"{denary % 2}" + binary;
+                binary.Insert(0, $"{denary % 2}");
                 denary /= 2;
             }
+            if(format)
+            {
+                binary.Insert(0, "0", 8 - binary.Length);
+                binary.Insert(4, " ");
+            }
 
-            return binary;
+            return binary.ToString();
         }
 
         /// <summary>

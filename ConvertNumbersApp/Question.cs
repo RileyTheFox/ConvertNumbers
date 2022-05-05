@@ -26,6 +26,7 @@ namespace ConvertNumbersApp
         // Type of question and the answer to it
         private readonly QuestionFlag QuestionType;
         private readonly string Answer;
+        private readonly string FormattedAnswer;
 
         /// <summary>
         /// Constructor for the Question, takes in all the UI elements, a Random reference and the type of question (if left Default it will be random)
@@ -65,31 +66,33 @@ namespace ConvertNumbersApp
                     Label.Text = "Denary -> Binary";
                     QuestionText.Text = denary.ToString();
                     Answer = Converters.DenaryToBinary(denary);
+                    FormattedAnswer = Converters.DenaryToBinary(denary, true);
                     break;
                 case QuestionFlag.BinaryToDenary:
                     Label.Text = "Binary -> Denary";
-                    QuestionText.Text = Converters.DenaryToBinary(denary);
-                    Answer = denary.ToString();
+                    QuestionText.Text = Converters.DenaryToBinary(denary, true);
+                    Answer = FormattedAnswer = denary.ToString();
                     break;
                 case QuestionFlag.BinaryToHex:
                     Label.Text = "Binary -> Hex";
-                    QuestionText.Text = Converters.DenaryToBinary(denary);
-                    Answer = Converters.DenaryToHex(denary);
+                    QuestionText.Text = Converters.DenaryToBinary(denary, true);
+                    Answer = FormattedAnswer = Converters.DenaryToHex(denary);
                     break;
                 case QuestionFlag.HexToBinary:
                     Label.Text = "Hex -> Binary";
                     QuestionText.Text = Converters.DenaryToHex(denary);
                     Answer = Converters.DenaryToBinary(denary);
+                    FormattedAnswer = Converters.DenaryToBinary(denary, true);
                     break;
                 case QuestionFlag.DenaryToHex:
                     Label.Text = "Denary -> Hex";
                     QuestionText.Text = denary.ToString();
-                    Answer = Converters.DenaryToHex(denary);
+                    Answer = FormattedAnswer = Converters.DenaryToHex(denary);
                     break;
                 case QuestionFlag.HexToDenary:
                     Label.Text = "Hex -> Denary";
                     QuestionText.Text = Converters.DenaryToHex(denary);
-                    Answer = denary.ToString();
+                    Answer = FormattedAnswer = denary.ToString();
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();
@@ -122,7 +125,7 @@ namespace ConvertNumbersApp
             }
 
             // Set the text of the answer label to the correct answer and reveal it
-            AnswerLabel.Text = Answer;
+            AnswerLabel.Text = FormattedAnswer;
             AnswerLabel.Visible = true;
         }
 
